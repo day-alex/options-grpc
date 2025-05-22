@@ -1,0 +1,38 @@
+# Build folders
+/build/
+/cmake-build-*/
+
+# Compiled object files
+*.o
+*.obj
+
+# Compiled binary
+options_grpc_server
+*.exe
+*.out
+
+# CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# gRPC/Protobuf generated files
+/generated/*.pb.cc
+/generated/*.pb.h
+/generated/*.grpc.pb.cc
+/generated/*.grpc.pb.h
+
+# Optional: keep proto files, ignore generated code
+# Or remove this block if you want to check them in
+
+# IDE/editor files
+*.log
+*.swp
+*.DS_Store
+.vscode/
+.idea/
+
+# OS junk
+Thumbs.db
+.DS_Store

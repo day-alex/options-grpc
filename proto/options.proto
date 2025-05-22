@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service Options {
+    rpc BlackScholes(OptionInputs) returns (OptionPrices);
+}
+
+message OptionInputs {
+    double S = 1; // spot
+    double K = 2; // strike
+    double T = 3; // expiration
+    double R = 4; // rate
+    double V = 5; // volatility
+}
+
+message OptionPrices {
+    double c = 1;
+    double p = 2;
+}
