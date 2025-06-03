@@ -9,7 +9,7 @@ public:
     grpc::Status BlackScholes(grpc::ServerContext* context,
                                 const OptionInputs* request,
                                 OptionPrices* response) override {
-        std::cout << "📥 Received gRPC request: "
+        std::cout << "-- Received gRPC request: "
               << "S=" << request->s() << ", "
               << "K=" << request->k() << ", "
               << "T=" << request->t() << ", "
