@@ -16,3 +16,22 @@ message OptionPrices {
     double c = 1;
     double p = 2;
 }
+
+service VolSurfaceService {
+    rpc ComputeSurface(VolSurfaceRequest) returns (VolSurfaceResponse);
+}
+
+message VolSurfaceRequest {
+    double S = 1; // spot
+    double R = 2; // rate
+    bool is_call = 3;
+    repeated float strikes = 4;
+    repeated float expirations = 5; // in years
+    repeated float market_prices = 6; // row-major flatten of (exp x strike) matrix
+}
+
+message VolSurfaceResponse {
+    repeated float implied_vols = 1; // same shape/order as market_prices
+    int32 num_rows = 2; // number of exps
+    int32 num_cols = 3; // number of strikes
+}
