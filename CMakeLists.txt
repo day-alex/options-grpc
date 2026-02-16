@@ -22,6 +22,7 @@ set(GENERATED_SRCS
 set(SRC_FILES
   ${CMAKE_SOURCE_DIR}/src/server.cpp
   ${CMAKE_SOURCE_DIR}/src/options/black_scholes.cpp
+  ${CMAKE_SOURCE_DIR}/src/options/monte_carlo.cpp
 )
 
 # Find gRPC and Protobuf using installed CMake config files
