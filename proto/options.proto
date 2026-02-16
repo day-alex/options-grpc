@@ -2,6 +2,7 @@ syntax = "proto3";
 
 service Options {
     rpc BlackScholes(OptionInputs) returns (OptionPrices);
+    rpc MonteCarlo(MonteCarloInputs) returns (MonteCarloResult);
 }
 
 message OptionInputs {
@@ -15,6 +16,28 @@ message OptionInputs {
 message OptionPrices {
     double c = 1;
     double p = 2;
+}
+
+message MonteCarloInputs {
+    double S = 1;
+    double K = 2;
+    double T = 3;
+    double R = 4;
+    double V = 5;
+    int32 num_paths = 6;
+    int32 num_steps = 7;
+    int32 num_vis_paths = 8;
+}
+
+message MonteCarloResult {
+    double call_price = 1;
+    double put_price = 2;
+    double call_std_error = 3;
+    double put_std_error = 4;
+    int32 num_paths = 5;
+    repeated double path_data = 6;
+    int32 num_vis_paths = 7;
+    int32 num_steps = 8;
 }
 
 service VolSurfaceService {
